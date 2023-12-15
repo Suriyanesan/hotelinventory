@@ -1,0 +1,38 @@
+<!-- <h1>Name {{name}}</h1> -->
+
+<!-- <app-header></app-header> -->
+<!-- <div >
+    Number of rooms:
+    <div [innerText] ="numberofrooms"></div>
+</div> -->
+<!-- <div *ngIf="selectedRoom">
+    {{selectedRoom | json}}
+</div> -->
+<!-- <router-outlet></router-outlet> -->
+
+<router-outlet></router-outlet>
+<div>
+    <button class="btn btn-success" routerLink="add">Add Room</button>
+</div>
+ <!-- {{ rooms.availableRooms ?? 'No rooms' }}  -->
+
+
+ {{priceFilter | json}}
+ <div>
+    <input type="number" class="form-control" placeholder="price" [formControl]="priceFilter">
+ </div>
+
+ <div *ngIf="rooms.availableRooms > 0">
+    <app-rooms-list [rooms]="roomlist" [title]="'Room List'" [price]="priceFilter.value || 0" [hidden]="hide" (selectedRoom)="selectRoom($event)"></app-rooms-list>
+</div>
+
+
+
+<!-- <button (click)="toggle()">toggle</button> &nbsp;
+<button (click)="editRoom()">EditRoom</button> &nbsp;
+<button (click)="deleteRoom()">DeleteRoom</button> -->
+
+<!-- <h1>
+    {{totalbytes}} loaded
+</h1> -->
+
